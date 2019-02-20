@@ -16,6 +16,18 @@
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
+		<resources>
+            <resource>
+                <directory>src/templates</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/templates</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -25,6 +37,22 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+            <plugin>  
+               <groupId>org.codehaus.mojo</groupId>  
+               <artifactId>exec-maven-plugin</artifactId>  
+               <version>1.1.1</version>  
+               <executions>  
+                <execution>  
+                 <phase>test</phase>  
+                 <goals>  
+                  <goal>java</goal>  
+                 </goals>  
+                 <configuration>  
+                  <mainClass>com.csv.parser.main.CsvTOBean</mainClass>  
+                 </configuration>  
+                </execution>  
+               </executions>  
+              </plugin>  
 		</plugins>
 	</build>
 </project>

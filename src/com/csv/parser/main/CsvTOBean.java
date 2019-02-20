@@ -29,7 +29,7 @@ public class CsvTOBean {
 	public static List<Messages> parsrMessages(String fileName) throws Exception {
 
 		// Get File using FileReader and build a csvReader
-		csvReader = new CSVReaderBuilder(new FileReader(new File(CsvTOBean.class.getResource("/templates/"+fileName).toURI()))).withSkipLines(1).build();
+		csvReader = new CSVReaderBuilder(new FileReader(new File(CsvTOBean.class.getResource("/"+fileName).toURI()))).withSkipLines(1).build();
 
 		messageList = new ArrayList<Messages>();
 
